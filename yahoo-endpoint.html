@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yahoo Ticker</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        var url = 'http://query.yahooapis.com/v1/public/yql?q=env%20%27store://datatables.org/alltableswithkeys%27;select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22goog%22)%0A%09%09&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json';
+
+        // $.AJAX, $.getJSON these are using the xmlhttpobject to go fetch data and bring it back 
+        console.log("Issusing an AJAX request...")
+            // getJSON takes 2 args: 
+            // 1. The where (url)
+            // 2. Code to run when JS is back from the request
+            // 2b. The function to run when JS is back, wiull have 1 arg, it will be what JS found at that URL
+        $.getJSON(url, (data) => {
+            console.log(data);
+        });
+        console.log("AJAX request sent.")
+
+        // JSON is a javascript object
+        // AJAX is the process by which you go and fetch out JSON
+        // API is a someone who has some data, that AJAX can ask
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
